@@ -1,5 +1,15 @@
+@import './animation.scss';
+
+$color-1: #e4d6a7;
+$color-2: #e9b44c;
+$color-3: #9b2915;
+$color-4: #0f0905;
+$color-5: #50a2a7;
+$color-6: #060606;
+
 html,
 body {
+  background-color: $color-6;
   direction: rtl;
   margin: 0;
   padding: 0;
@@ -13,27 +23,102 @@ body {
 }
 
 .full-screen {
-  width: 100vw;
   height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: $color-2;
+}
+
 .main {
+  font-family: 'IranNastaliq', Sans-Serif;
   display: flex;
   flex-direction: column;
+  color: $color-1;
 
-  a {
-    text-decoration: none;
+  // -webkit-animation: fadein 1s;
+  // -moz-animation: fadein 1s;
+  // -ms-animation: fadein 1s;
+  // -o-animation: fadein 1s;
+  // animation: fadein 1s;
+  // animation-timing-function: linear;
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .text-background-container {
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    opacity: 0;
+    -webkit-animation: fadein 1s 1s forwards;
+    -moz-animation: fadein 1s 1s forwards;
+    -ms-animation: fadein 1s 1s forwards;
+    -o-animation: fadein 1s 1s forwards;
+    animation: fadein 1s 1s forwards;
+    animation-timing-function: linear;
+
+    .text-background {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+      flex-direction: column;
+      line-height: 100px;
+      font-size: 400px;
+      position: fixed;
+      color: $color-3;
+      z-index: 0;
+      transform: rotate(-20deg);
+      opacity: 0.1;
+
+      div {
+        overflow: visible;
+        white-space: nowrap;
+        letter-spacing: -1.5rem;
+        text-shadow: 2px 2px $color-4;
+
+        // -webkit-animation: moving 30s infinite;
+        // -moz-animation: moving 30s infinite;
+        // -ms-animation: moving 30s infinite;
+        // -o-animation: moving 30s infinite;
+        // animation: moving 30s infinite;
+        // animation-timing-function: linear;
+        // animation-direction: alternate-reverse;
+        // transition: transform 30s linear;
+      }
+      div:nth-child(odd) {
+        color: $color-2;
+      }
+    }
   }
 
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 25px;
-    font-family: 'IranNastaliq', Sans-Serif;
-    font-size: 20px;
+    padding: 20px 25px 0px;
+    font-size: 1.5rem;
     line-height: 40px;
+    z-index: 2;
     a {
-      font-size: 15px;
+      font-size: 1.2rem;
     }
   }
 
@@ -42,15 +127,36 @@ body {
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+    padding: 25px;
+    z-index: 2;
+    overflow: visible;
 
     .poem-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       font-family: 'IranNastaliq', Sans-Serif;
-      font-size: 25px;
-      line-height: 60px;
+      font-size: 1.8rem;
+      line-height: 4.5rem;
+      overflow: visible;
+
+      -webkit-animation: fadein 1s;
+      -moz-animation: fadein 1s;
+      -ms-animation: fadein 1s;
+      -o-animation: fadein 1s;
+      animation: fadein 1s;
+      animation-timing-function: linear;
+
+      span {
+        overflow: visible;
+      }
+
+      @media only screen and (max-width: 350px) {
+        font-size: 1.6rem;
+        line-height: 4rem;
+      }
     }
   }
 
@@ -58,8 +164,17 @@ body {
     display: flex;
     padding: 10px 20px;
     font-family: 'IranNastaliq', Sans-Serif;
-    font-size: 15px;
+    font-size: 1.2rem;
     line-height: 40px;
     justify-content: center;
+    z-index: 2;
+    text-align: center;
+
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -ms-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
+    animation-timing-function: linear;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assets/file/logo.png';
 import { randomSaadiGhazal } from '../utils/ganjoor';
 
 export const Main = () => {
@@ -15,8 +16,24 @@ export const Main = () => {
   }, []);
   return (
     <div className="full-screen main">
+      <div className="text-background-container">
+        <div className="text-background">
+          {poem?.text.map((m, i) => (
+            <div key={i}>{m}</div>
+          ))}
+          {poem?.text.map((m, i) => (
+            <div key={i}>{m}</div>
+          ))}
+          {poem?.text.map((m, i) => (
+            <div key={i}>{m}</div>
+          ))}
+        </div>
+      </div>
       <div className="header">
-        <div>ملیکا امیرحسینی</div>
+        <div className="logo-container">
+          <img className="logo" src={logo} alt="م.ا" />
+          <span>ملیکا امیرحسینی</span>
+        </div>
         <div>
           <a href="https://twitter.com/mkamirhosseini1/">توئیتر</a>
         </div>
