@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass --watch src/assets/css/main.scss:src/assets/css/main.min.css --style compressed --update"
+    "sass": "sass --watch src/assets/css/main.scss:src/assets/css/main.min.css --style compressed --update",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
