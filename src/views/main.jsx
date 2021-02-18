@@ -6,12 +6,13 @@ export const Main = () => {
   const [poem, setPoem] = useState();
   useEffect(() => {
     randomSaadiGhazal().then((data) => {
-      setPoem({
-        ...data,
-        text: Object.entries(data.text)
-          .slice(0, 4)
-          .map((entry) => entry[1]),
-      });
+      // setPoem({
+      //   ...data,
+      //   text: Object.entries(data.text)
+      //     .slice(0, 4)
+      //     .map((entry) => entry[1]),
+      // });
+      setPoem(data)
     });
   }, []);
   return (
